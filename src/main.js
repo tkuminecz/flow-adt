@@ -1,24 +1,34 @@
 // @flow
-import type { $TList } from 'flow-higher';
+import type { $List } from 'flow-higher';
 
-export class TypeDef<Sig: $TList<any, any>, Opts: { data: any }> {} // eslint-disable-line no-unused-vars
+export class Type<Sig: $List<any, any>, Tags> {} // eslint-disable-line no-unused-vars
 
-export class ADT<K, T> { // eslint-disable-line no-unused-vars
+export class ADT<K, T, D> { // eslint-disable-line no-unused-vars
 
-	static wrap<Sig: $TList<any, any>, Data, Def: TypeDef<Sig, { data: Data }>>(k: Class<Def>, data: Data): ADT<Def, Sig> {
-		return ((data: any): ADT<Def, Sig>);
+	static wrap<Sig: $List<any, any>, Tags, Def: Type<Sig, Tags>>(k: Class<Def>, tag: Tags): ADT<Def, Sig, Tags> {
+		return ((tag: any): ADT<Def, Sig, Tags>);
 	}
 
-	static unwrap<Sig, Data, Def: TypeDef<Sig, { data: Data }>>(def: Def, adt: ADT<Def, Sig>): Data {
-		return ((adt: any): Data);
+	static unwrap<Sig, Tags, Def: Type<Sig, Tags>>(def: Class<Def>, adt: ADT<Def, Sig, Tags>): Tags {
+		return ((adt: any): Tags);
 	}
 
 }
 
-export function createDataType<Sig: $TList<any, any>, TypeInstance: *, Data, ThisAdt: TypeDef<Sig, { data: Data }>>(
-	TypeSpec: Class<ThisAdt>,
-	instanceClassFn: (type: Class<ThisAdt>) => Class<TypeInstance>
+export type $ADT<K, T> = ADT<K, T, *>
+
+interface InstanceBase<T> {
+	$Type: T
+}
+
+export function createDataType<Sig: $List<any, any>, TypeInstance: *, Tags, ThisAdt: Type<Sig, Tags>>(
+	TypeDef: Class<ThisAdt>,
+	instanceClassFn: (base: Class<InstanceBase<Class<ThisAdt>>>, type: Class<ThisAdt>) => Class<TypeInstance>
 
 ): TypeInstance  {
-	return new instanceClassFn(TypeSpec)();
+	const Base = class {
+		$Type = TypeDef
+	};
+
+	return new instanceClassFn(Base, TypeDef)();
 }

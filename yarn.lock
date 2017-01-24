@@ -1431,9 +1431,15 @@ flow-bin:
   version "0.38.0"
   resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.38.0.tgz#3ae096d401c969cc8b5798253fb82381e2d0237a"
 
-flow-higher@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/flow-higher/-/flow-higher-1.1.0.tgz#99a00b3141252f0e32764e6c8405fbaf522cf1e5"
+flow-helpers, flow-helpers@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/flow-helpers/-/flow-helpers-0.2.0.tgz#427311c94247f9364e8cebdc0cea188b2185bc9c"
+
+flow-higher@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/flow-higher/-/flow-higher-2.1.0.tgz#ca948cbcee2b1beddcf74d67e620bf086c955055"
+  dependencies:
+    flow-helpers "^0.2.0"
 
 for-each@~0.3.2:
   version "0.3.2"
