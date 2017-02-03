@@ -36,6 +36,6 @@
   },
   "dependencies": {
     "flow-helpers": "^0.2.0",
-    "flow-higher": "2.1.0"
+    "flow-higher": "4.1.0"
   }
 }

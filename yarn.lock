@@ -1435,9 +1435,9 @@ flow-helpers, flow-helpers@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/flow-helpers/-/flow-helpers-0.2.0.tgz#427311c94247f9364e8cebdc0cea188b2185bc9c"
 
-flow-higher@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/flow-higher/-/flow-higher-2.1.0.tgz#ca948cbcee2b1beddcf74d67e620bf086c955055"
+flow-higher@4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/flow-higher/-/flow-higher-4.1.0.tgz#a8bf26ed9706106e3b3963e6076a081ff605e1ed"
   dependencies:
     flow-helpers "^0.2.0"
 
