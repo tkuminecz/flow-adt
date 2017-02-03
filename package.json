@@ -1,6 +1,6 @@
 {
   "name": "flow-adt",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Algebraic data types for Flow",
   "main": "lib/main.js",
   "files": [
