@@ -1,34 +1,20 @@
 // @flow
-import type { $List } from 'flow-higher';
-
-export class Type<Sig: $List<any, any>, Tags> {} // eslint-disable-line no-unused-vars
-
-export class ADT<K, T, D> { // eslint-disable-line no-unused-vars
-
-	static wrap<Sig: $List<any, any>, Tags, Def: Type<Sig, Tags>>(k: Class<Def>, tag: Tags): ADT<Def, Sig, Tags> {
-		return ((tag: any): ADT<Def, Sig, Tags>);
-	}
-
-	static unwrap<Sig, Tags, Def: Type<Sig, Tags>>(def: Class<Def>, adt: ADT<Def, Sig, Tags>): Tags {
-		return ((adt: any): Tags);
-	}
-
-}
-
-export type $ADT<K, T> = ADT<K, T, *>
-
-interface InstanceBase<T> {
-	$Type: T
-}
-
-export function createDataType<Sig: $List<any, any>, TypeInstance: *, Tags, ThisAdt: Type<Sig, Tags>>(
-	TypeDef: Class<ThisAdt>,
-	instanceClassFn: (base: Class<InstanceBase<Class<ThisAdt>>>, type: Class<ThisAdt>) => Class<TypeInstance>
-
-): TypeInstance  {
-	const Base = class {
-		$Type = TypeDef
-	};
-
-	return new instanceClassFn(Base, TypeDef)();
-}
+export type { Alt } from './class/alt';
+export type { Alternative } from './class/alternative';
+export type { Applicative } from './class/applicative';
+export type { Apply } from './class/apply';
+export type { Chain } from './class/chain';
+export type { ChainRec } from './class/chainrec';
+export type { Comonad } from './class/comonad';
+export type { Eq } from './class/eq';
+export type { Extend } from './class/extend';
+export type { Foldable } from './class/foldable';
+export type { Functor } from './class/functor';
+export type { Matchable } from './class/matchable';
+export type { Monad } from './class/monad';
+export type { Monoid } from './class/monoid';
+export type { Plus } from './class/plus';
+export type { Semigroup } from './class/semigroup';
+export type { Setoid } from './class/setoid';
+export type { Traversable } from './class/traversable';
+export type { Unfoldable } from './class/unfoldable';
