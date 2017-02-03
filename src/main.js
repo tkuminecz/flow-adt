@@ -1,1 +1,20 @@
 // @flow
+export type { Alt } from './class/alt';
+export type { Alternative } from './class/alternative';
+export type { Applicative } from './class/applicative';
+export type { Apply } from './class/apply';
+export type { Chain } from './class/chain';
+export type { ChainRec } from './class/chainrec';
+export type { Comonad } from './class/comonad';
+export type { Eq } from './class/eq';
+export type { Extend } from './class/extend';
+export type { Foldable } from './class/foldable';
+export type { Functor } from './class/functor';
+export type { Matchable } from './class/matchable';
+export type { Monad } from './class/monad';
+export type { Monoid } from './class/monoid';
+export type { Plus } from './class/plus';
+export type { Semigroup } from './class/semigroup';
+export type { Setoid } from './class/setoid';
+export type { Traversable } from './class/traversable';
+export type { Unfoldable } from './class/unfoldable';
