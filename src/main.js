@@ -10,7 +10,6 @@ export type { Eq } from './class/eq';
 export type { Extend } from './class/extend';
 export type { Foldable } from './class/foldable';
 export type { Functor } from './class/functor';
-export type { Matchable } from './class/matchable';
 export type { Monad } from './class/monad';
 export type { Monoid } from './class/monoid';
 export type { Plus } from './class/plus';

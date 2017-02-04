@@ -1,5 +1,6 @@
 // @flow
-import type { $A, $App, $SwapA } from 'flow-higher';
+import type { $A, $SwapA } from 'flow-type-list';
+import type { $App } from 'flow-higher';
 
 /**
  * `Functor` type class

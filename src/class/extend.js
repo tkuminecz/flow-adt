@@ -1,5 +1,6 @@
 // @flow
-import type { $App, $SwapA } from 'flow-higher';
+import type { $App } from 'flow-higher';
+import type { $SwapA } from 'flow-type-list';
 
 /**
  * `Extend` type class

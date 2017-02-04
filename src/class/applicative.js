@@ -1,5 +1,6 @@
 // @flow
-import type { $A, $App } from 'flow-higher';
+import type { $A } from 'flow-type-list';
+import type { $App } from 'flow-higher';
 import type { Apply } from './apply';
 
 /**
